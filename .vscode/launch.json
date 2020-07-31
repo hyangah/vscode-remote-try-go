@@ -2,11 +2,30 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Server",
+            "name": "Launch without any overrides",
             "type": "go",
             "request": "launch",
             "mode": "debug",
             "program": "${workspaceFolder}/server.go"
+        },
+        {
+            "name": "Launch with envFile override",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/server.go",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "Launch with env overrides container env",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/server.go",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "TESTING": "env"
+            }
         }
     ]
 }
